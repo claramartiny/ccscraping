@@ -1,8 +1,5 @@
 #Step 1: import the data
 
-import feedparser;
-NewsFeed = feedparser.parse("https://www.lemonde.fr/climat/rss_full.xml");
-print (NewsFeed);
 
 #Step 2: make a summary of the data
 
@@ -12,8 +9,15 @@ r = requests.post(
     data={
         'text':'https://www.lemonde.fr/climat/rss_full.xml',
     },
-    headers={'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K'}
+    headers={'api-key': 'fdc4c55f-4078-4730-a681-534cda607471'}
 )
-print(r.json())
-#Step 3: put the data into a word doc
 
+print(r.json());
+
+text = str(r.json());
+
+#Step 3: put the data into a txt file
+
+fh = open ('ccscraping.txt','w');
+fh.write(text);
+fh.close();
