@@ -11,7 +11,4 @@ def summarize_text(link):
     article.parse()
     article.nlp()
 
-    return(article.summary)
-
-#aaa = summarize_text('https://www.lemonde.fr/societe/article/2020/09/10/covid-19-imbroglio-autour-des-masques-des-enseignants_6051702_3224.html')
-#print(aaa)
+    return(article)
